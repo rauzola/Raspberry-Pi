@@ -8,6 +8,9 @@ Assim como imprimir “Olá, mundo!” é o primeiro passo para aprender a progr
 
 Agora que conhecemos o funcionamento do resistor e do LED, em nosso primeiro exemplo prático iremos fazer uma luz piscar. Parece um exercício simples demais, mas isso exemplifica a utilização da placa Raspberry Pi Pico W para controle de dispositivos externos. Os conceitos aprendidos neste exemplo servem para acionamento de outros dispositivos como ventilador, lâmpadas, motores e etc.
 
+![Pisca Pisca GIF](https://github.com/rauzola/Raspberry-Pi/blob/main/LED/Pisca%20Pisca/5.3PiscaPisca1920x1080-ezgif.com-video-to-gif-converter.gif)
+
+
 Esse é o primeiro projeto que será um pequeno grande passo para que você aprenda eletrônica e programação e possa fazer exercícios mais complexos.
 
 ## Materiais Necessários
@@ -24,6 +27,9 @@ Em todos os exercícios e projetos teremos uma seção que mostra os componentes
 ## Circuito
 
 No esquema da montagem do circuito, as linhas coloridas são a representação gráfica dos jumpers. Utilize-os para ligar os componentes entre si conforme a ilustração abaixo: 
+
+![Circuito](https://raw.githubusercontent.com/rauzola/Raspberry-Pi/main/LED/Pisca%20Pisca/5-3-Pisca-Pisca_bb-1.png.webp)
+
 
 Nesse exemplo, após a programação da placa, o LED acende quando a fonte de energia (que nesse caso é o pino de saída da Pico W) é ligada e ao desligar a fonte de energia, o LED apagará. O resistor é colocado para reduzir a corrente que passa pelo circuito inteiro.
 
