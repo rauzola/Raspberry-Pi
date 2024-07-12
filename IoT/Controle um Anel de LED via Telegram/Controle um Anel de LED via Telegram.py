@@ -8,7 +8,8 @@ import utime  # Para manipular tempo e criar delays
 import machine  # Para controle de hardware
 
 # Importação das bibliotecas customizadas 
-from realiza_conexao import *  # Função para realizar conexão Wi-Fi
+from realiza_conexao import realiza_conexao  # Importa a função realiza_conexao do arquivo realiza_conexao.py
+
 from ws2812 import WS2812  # Biblioteca para controlar LEDs WS2812
 
 # Declaração do Anel de LEDs
