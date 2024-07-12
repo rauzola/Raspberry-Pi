@@ -10,12 +10,12 @@ Um pulso é uma saída digital que contém um nível alto e um nível baixo. A l
 
 Quando estivermos em um curto período de tempo (como 20ms, que é o período de retenção visual da maioria das pessoas), deixar o LED acender, desligar e ligar novamente, não veremos que ele foi desligado, mas sim o brilho da luz será ligeiramente mais fraca. Durante este período, quanto mais tempo o LED estiver aceso, mais brilhante ele se tornará. Em outras palavras, no ciclo, quanto mais amplo o pulso, maior será a “intensidade do sinal elétrico” emitida pelo microcontrolador. É assim que o PWM controla o brilho do LED (ou a velocidade do motor). 
 
-//![Pisca Pisca GIF](https://github.com/rauzola/Raspberry-Pi/blob/main/LED/Pisca%20Pisca/5.3PiscaPisca1920x1080-ezgif.com-video-to-gif-converter.gif)
+![Pisca Pisca GIF](https://github.com/rauzola/Raspberry-Pi/blob/main/LED/LED%20oscilante/5.4LEDoscilante1920x1080-ezgif.com-video-to-gif-converter.gif)
 
 
 Há alguns pontos a serem observados quando o Pico W usa PWM. Vamos dar uma olhada nesta imagem.
 
-//![raspberry-pi-pico-w-pinout](https://raw.githubusercontent.com/rauzola/Raspberry-Pi/main/LED/Pisca%20Pisca/5-3-Pisca-Pisca_bb-1.png.webp)
+![raspberry-pi-pico-w-pinout](https://raw.githubusercontent.com/rauzola/Raspberry-Pi/main/LED/LED%20oscilante/raspberry-pi-pico-w-pinout-1024x671.png.webp)
 
 A Pico W suporta PWM em cada pino GPIO, mas na verdade existem 16 saídas PWM independentes (em vez de 30), distribuídas entre GP0 a GP15 à esquerda, e a saída PWM do GPIO direito é idêntica à esquerda.
 
@@ -38,7 +38,7 @@ Neste projeto, precisamos dos seguintes componentes:
 
 Este projeto possui o mesmo circuito do primeiro projeto 5.3 Pisca-Pisca, mas o tipo de sinal é diferente. O primeiro projeto é emitir níveis altos e baixos digitais (0 e 1) diretamente do GP15 para fazer os LEDs acenderem ou desligarem. Este projeto é para emitir o sinal PWM do GP15 para controlar o brilho do LED.
 
-//![Circuito](https://raw.githubusercontent.com/rauzola/Raspberry-Pi/main/LED/Pisca%20Pisca/5-3-Pisca-Pisca_bb-1.png.webp)
+![Circuito](https://raw.githubusercontent.com/rauzola/Raspberry-Pi/main/LED/LED%20oscilante/5-3-Pisca-Pisca_bb-1.png.webp)
 
 ## Programa
 
