@@ -2,7 +2,7 @@
 
 ## Kit Maker Raspberry Pi
 
-### 5. LED 5.3 Pisca Pisca
+### LED - Pisca Pisca
 
 Assim como imprimir “Olá, mundo!” é o primeiro passo para aprender a programar com uma IDE, usar um programa para acionar um LED é a introdução tradicional ao aprendizado de programação e eletrônica.
 
