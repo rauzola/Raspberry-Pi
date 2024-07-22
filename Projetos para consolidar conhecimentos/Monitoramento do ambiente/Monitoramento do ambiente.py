@@ -21,30 +21,34 @@ utime.sleep(5)  # Atraso para a inicialização correta do sensor
 # Laço de execução
 while True:
     valor_luminosidade = foto_resistor.read_u16()
+    porcentagem_iluminacao = ((valor_de_baixa_luminosidade - valor_luminosidade) / valor_de_baixa_luminosidade) * 100
     
     try:
         # Tenta ler a temperatura do sensor.
         temp = sensor.temperature
         # Tenta ler a umidade do sensor.
         humidity = sensor.humidity
-        # Imprime os valores de temperatura e umidade lidos do sensor.
-        print("Temperature: {}°C   Humidity: {:.0f}% ".format(temp, humidity))
+        # Imprime os valores de temperatura, umidade e luminosidade lidos do sensor.
+        print("Temperatura: {}°C  Umidade: {:.0f}%  Luminosidade: {:.1f}%".format(temp, humidity, porcentagem_iluminacao))
     except Exception as e:
         # Captura qualquer exceção que ocorra durante a leitura dos valores do sensor.
-        print("Error reading sensor:", e)
+        print("Erro ao ler o sensor:", e)
         # Reinicia o loop em caso de erro, ignorando o restante do código no bloco while.
         continue
-
-    porcentagem_iluminacao = ((valor_de_baixa_luminosidade - valor_luminosidade) / valor_de_baixa_luminosidade) * 100
+    
     string_temp = "Temp: {}C".format(temp)
     string_umid = "Umi : {}%".format(humidity)
     string_lumi = "Luz : {}%".format(round(porcentagem_iluminacao, 1))
     
-    LCD.fill(colour(40, 40, 40))
-    LCD.show()
+    # Limpa as áreas onde o texto será atualizado
+    LCD.fill_rect(17, 30, 200, 40, colour(40, 40, 40))  # Limpa a área da temperatura
+    LCD.fill_rect(17, 80, 200, 40, colour(40, 40, 40))  # Limpa a área da umidade
+    LCD.fill_rect(17, 120, 200, 40, colour(40, 40, 40))  # Limpa a área da luminosidade
+    
+    # Desenha o texto nas áreas limpas
     LCD.printstring(string_temp, 17, 30, 3, 0, 0, colour(244, 255, 113))
     LCD.printstring(string_umid, 17, 80, 3, 0, 0, colour(244, 255, 113))
     LCD.printstring(string_lumi, 17, 120, 3, 0, 0, colour(244, 255, 133))
     LCD.show()
     
-    utime.sleep(2)  # Aguarda 2 segundos antes de fazer a próxima leitura
+    utime.sleep(1)  # Aguarda 1 segundo antes de fazer a próxima leitura
